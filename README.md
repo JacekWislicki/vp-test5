@@ -32,9 +32,9 @@ Copy test5.json (the schema file) to /pulsar/schemas (or update the scripts belo
 Both the Flink job and the Pulsar function can be packaged deployed to any environment, still the steps below describe running them from IDE:
 1. Start the Pulsar function: debug (or run) com.example.test5.pulsar.function.OutReadFunctionMain.
 2. Start the Flink job: debug (or run) com.example.test5.flink.job.InToOutJob.
-3. Produce a massage to the OUT topic with com.example.test5.pulsar.producer.OutTopicProducer
-4. OutReadFunction receives and processes the message
-5. Produce a massage to the IN topic with com.example.test5.pulsar.producer.InTopicProducer
-6. InToOutJob receives, processes and writes the message to OUT
-7. OutReadFunction does not receive the last message
-8. Producing any other message to OUT (from OutTopicProducer or via InToOutJob) does not result moving the ledger position for OUT.
+3. Produce a massage to the OUT topic with com.example.test5.pulsar.producer.OutTopicProducer.
+4. OutReadFunction receives and processes the message.
+5. Produce a massage to the IN topic with com.example.test5.pulsar.producer.InTopicProducer.
+6. InToOutJob receives, processes and writes the message to OUT.
+7. OutReadFunction does not receive the last message.
+8. Producing any other message to OUT (from OutTopicProducer or via InToOutJob) does not result in moving the ledger position for OUT, OutReadFunction is stuck on the last message from InToOutJob. 
