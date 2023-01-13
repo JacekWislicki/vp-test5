@@ -15,7 +15,7 @@
     --filename /pulsar/schemas/test5.json \
     persistent://public/default/test5-in
 
-./pulsar-admin schemas delete persistent://public/default/test-status-in
+./pulsar-admin schemas delete persistent://public/default/test-status-out
 ./pulsar-admin schemas upload \
     --filename /pulsar/schemas/test5.json \
     persistent://public/default/test5-out
