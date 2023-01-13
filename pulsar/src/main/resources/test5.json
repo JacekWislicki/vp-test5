@@ -1,0 +1,1 @@
+{"type":"AVRO","properties":{},"schema":"{\"type\":\"record\",\"name\":\"Message\",\"namespace\":\"com.example.test5.model\",\"fields\":[{\"name\":\"field01\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"field02\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"field03\",\"type\":[\"null\",\"string\"],\"default\":null}]}"}

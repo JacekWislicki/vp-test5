@@ -1,0 +1,21 @@
+## TOPICS
+./pulsar-admin topics unload persistent://public/default/test5-in
+./pulsar-admin topics delete-partitioned-topic persistent://public/default/test5-in
+./pulsar-admin topics create-partitioned-topic --partitions 1 persistent://public/default/test5-in
+./pulsar-admin topics create-subscription persistent://public/default/test5-in -s test5-in-flink
+
+./pulsar-admin topics unload persistent://public/default/test5-out
+./pulsar-admin topics delete-partitioned-topic persistent://public/default/test5-out
+./pulsar-admin topics create-partitioned-topic --partitions 1 persistent://public/default/test5-out
+./pulsar-admin topics create-subscription persistent://public/default/test5-out -s test5-out-pulsar
+
+## SCHEMAS
+./pulsar-admin schemas delete persistent://public/default/test-status-in
+./pulsar-admin schemas upload \
+    --filename /pulsar/schemas/test5.json \
+    persistent://public/default/test5-in
+
+./pulsar-admin schemas delete persistent://public/default/test-status-in
+./pulsar-admin schemas upload \
+    --filename /pulsar/schemas/test5.json \
+    persistent://public/default/test5-out
