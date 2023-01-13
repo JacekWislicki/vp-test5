@@ -6,7 +6,6 @@ import org.apache.pulsar.common.functions.FunctionConfig;
 import org.apache.pulsar.functions.LocalRunner;
 
 import com.example.test5.commons.utils.Config;
-import com.example.test5.pulsar.function.OutReadFunction;
 
 public class OutReadFunctionMain {
 
